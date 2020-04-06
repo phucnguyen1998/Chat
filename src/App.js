@@ -26,7 +26,7 @@ class App extends React.Component{
 
 	logOutUser = () => {
 		firebase.auth().signOut()
-			.then(window.location = "/");
+			.then(window.location = "/Chat");
 	}
 
 	render(){
@@ -47,7 +47,7 @@ class App extends React.Component{
 					</nav>
 
 					<Switch>
-						<Route path="/" exact render={() => <Home user={this.state.user}/>} />
+						<Route path="/Chat" exact render={() => <Home user={this.state.user}/>} />
 						<Route path="/login" exact component={Login} />
 						<Route path="/register" exact component={Register} />
 						<Route component={NoMatch} />
