@@ -30,7 +30,7 @@ class Register extends React.Component{
 				user
 					.updateProfile({displayName: username})
 					.then(() => {
-						this.props.history.push('/');
+						this.props.history.push('/Chat');
 					})
 					.catch(error => {
 						this.setState({error});
