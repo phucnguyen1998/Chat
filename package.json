@@ -1,7 +1,7 @@
 {
   "name": "chatbox",
   "version": "0.1.0",
-  "homepage": "https://phucnguyen1998.github.io/",
+  "homepage": "https://phucnguyen1998.github.io/Chat",
   "private": true,
   "dependencies": {
     "firebase": "^7.13.2",
