@@ -42,7 +42,7 @@ class App extends React.Component{
 						}
 
 						{this.state.user && 
-							<a href="#!" onClick={this.logOutUser}>Đăng xuất</a>
+							<a href="/Chat" onClick={this.logOutUser}>Đăng xuất</a>
 						}
 					</nav>
 
@@ -50,7 +50,7 @@ class App extends React.Component{
 						<Route path="/Chat" exact render={() => <Home user={this.state.user}/>} />
 						<Route path="/login" exact component={Login} />
 						<Route path="/register" exact component={Register} />
-						<Route component={NoMatch} />
+						{/* <Route component={NoMatch} /> */}
 					</Switch>
 				</div>
 			</Router>
@@ -58,6 +58,6 @@ class App extends React.Component{
 	}
 }
 
-const NoMatch = ({location}) => <div>No route match for {location.pathname}</div>;
+// const NoMatch = ({location}) => <div>No route match for {location.pathname}</div>;
 
 export default App;
