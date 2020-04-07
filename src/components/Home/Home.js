@@ -33,6 +33,20 @@ class Home extends React.Component{
 		}
 	}
 
+	sendMessage = () => {
+		if(this.state.message !== ''){
+			const chatRef = firebase.database().ref('general');
+			const chat = {
+				message: this.state.message,
+				user: this.props.user.displayName,
+				timestamp: new Date().getTime()
+			}
+			
+			chatRef.push(chat);
+			this.setState({message: ''});
+		}
+	}
+
 	render(){
 		return(
 			<div className="home--container">
@@ -41,7 +55,7 @@ class Home extends React.Component{
 					<div className="allow-chat">
 						<form className="send-chat" onSubmit={this.handleSubmit}>
 							<input type="text" name="message" id="message" value={this.state.message} onChange={this.handleChange} placeholder='Nhập tin nhắn...' />
-							<input className="btn btn-primary" type="reset" value="Gửi"/>
+							<input className="btn btn-primary" type="reset" value="Gửi" onClick={this.sendMessage} />
 						</form>
 
 						<Chatbox />
