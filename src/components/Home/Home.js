@@ -41,6 +41,7 @@ class Home extends React.Component{
 					<div className="allow-chat">
 						<form className="send-chat" onSubmit={this.handleSubmit}>
 							<input type="text" name="message" id="message" value={this.state.message} onChange={this.handleChange} placeholder='Nhập tin nhắn...' />
+							<input className="btn btn-primary" type="reset" value="Gửi"/>
 						</form>
 
 						<Chatbox />
